@@ -70,10 +70,8 @@ namespace jobfit
             using (var process = new Process())
             {
                 process.StartInfo = processInfo;
-
                 process.Start();
                 process.WaitForExit(1000);
-
                 process.Close();
             }
         }
