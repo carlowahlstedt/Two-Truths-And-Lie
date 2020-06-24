@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
-using jobfit.classes;
 
 namespace jobfit
 {

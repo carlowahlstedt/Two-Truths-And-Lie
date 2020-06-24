@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace jobfit.classes
+namespace jobfit
 {
     public class GameEngine
     {
