@@ -20,7 +20,7 @@ namespace jobfit
 
             await fileManager.ReadAndOutputFile("from");
 
-            var tries =  await engine.Play(1);
+            var tries = await engine.Play(1);
 
             Console.WriteLine("");
             switch (tries)
@@ -29,7 +29,7 @@ namespace jobfit
                     InvokeDocker("Ok, that was too easy 🏀, here's another set of questions:", 1);
                     var bonusGameFile = GetGameFile(args, 1, "./gamefiles/truths-rnd2");
                     var bonusEngine = new GameEngine(bonusGameFile);
-                    tries =  await bonusEngine.Play(2);
+                    tries = await bonusEngine.Play(2);
                     break;
                 case 2:
                     InvokeDocker("😝 Fooled you once, shame on me! ⛹🏼‍♂️", 2);
@@ -52,17 +52,20 @@ namespace jobfit
 
         void InvokeDocker(string message, int character)
         {
-            var type = "gummy";
+            var type = "";
             switch (character)
             {
                 case 1:
-                    type = "gummy";
+                    type = "spike";
                     break;
                 case 2:
-                    type = "spike";
+                    type = "gummy";
                     break;
                 case 3:
                     type = "gummy";
+                    break;
+                default:
+                    return;
                     break;
             }
             var processInfo = new ProcessStartInfo("docker", $"run -ti --rm mpepping/ponysay --colour \"0;32\" --pony {type} {message}");
