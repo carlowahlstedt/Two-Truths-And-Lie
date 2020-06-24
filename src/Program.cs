@@ -64,7 +64,6 @@ namespace jobfit
                 case 3:
                     type = "gummy";
                     break;
-                // default:
             }
             var processInfo = new ProcessStartInfo("docker", $"run -ti --rm mpepping/ponysay --colour \"0;32\" --pony {type} {message}");
 
