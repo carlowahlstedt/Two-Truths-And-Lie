@@ -50,7 +50,7 @@ namespace jobfit
         }
 
 
-        static void InvokeDocker(string message, int character)
+        void InvokeDocker(string message, int character)
         {
             var type = "gummy";
             switch (character)
